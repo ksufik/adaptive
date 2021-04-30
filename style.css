@@ -57,7 +57,7 @@ body {
 }
 
 .banner-top__box {
-  padding: 31% 0 34%;
+  min-height: 764px;
   position: relative;
 }
 
@@ -497,6 +497,12 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     padding: 0 3%;
+  }
+  .banner-top__box {
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    padding: 31% 0 34%;
   }
   .banner-top__box img {
     display: none;

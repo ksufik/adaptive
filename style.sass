@@ -58,8 +58,7 @@ body
     &__box
         @extend .container
         // background: url(img/banner.png) no-repeat
-        // min-height: 764px
-        padding: 31% 0 34%
+        min-height: 764px
         position: relative
     &__text
         color: $black
@@ -381,6 +380,9 @@ body
         display: flex
         justify-content: center
         padding: 0 3%
+        &__box
+            min-height: fit-content
+            padding: 31% 0 34%
         &__box img
             display: none
 
