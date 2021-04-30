@@ -116,11 +116,6 @@ body {
           transform: scale(1.2);
 }
 
-.pics__link:hover .pics__img {
-  -webkit-filter: brightness(1.5);
-          filter: brightness(1.5);
-}
-
 .pics__img {
   width: 100%;
 }
