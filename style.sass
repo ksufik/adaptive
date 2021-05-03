@@ -2,7 +2,6 @@ $bd: 1px
 $pink: #f16d7f
 $e8: #E8E8E8
 $black: #222222
-
 *
     margin: 0
     padding: 0
@@ -48,10 +47,48 @@ body
 
 .fa-search, .fa-bars, .fa-user, .fa-shopping-cart
     @extend .header-icon
-
     cursor: pointer
+    position: relative
+    display: block
     &:hover
         @extend .pink
+
+.menu
+    &__box
+        padding: 3% 2%
+        background: #ffffff
+        font-size: 14px
+        line-height: 17px
+        display: none
+        position: absolute
+        top: 9%
+        left: 79%
+        right: 1%
+        bottom: 3%
+        z-index: 1
+    &__heading
+        color: #000000
+        margin-bottom: 1%
+        text-transform: uppercase
+    &__head
+        @extend .pink
+        margin-top: 10%
+        margin-bottom: 8%
+        text-transform: uppercase
+        font-weight: 400
+    &__list
+        list-style-type: none
+    &__link
+        color: #6F6E6E
+        text-decoration: none
+        display: block
+        padding-left: 5%
+        margin-top: 6%
+        &:hover
+            @extend .pink
+
+.menu[open] .menu__box
+    display: block
 
 .banner-top
     background: #F1E4E6
@@ -369,10 +406,16 @@ body
 
 @media (max-width: 667px)
 
+    .header-left
+        width: 25%
+
     .header-right
         width: 1%
 
     .fa-user, .fa-shopping-cart
+        display: none
+
+    .menu[open] .menu__box
         display: none
 
     .banner-top
@@ -414,5 +457,5 @@ body
         flex-direction: column-reverse
 
     .social
-        width: 25%
+        width: 40%
         padding: 8% 0 9%
