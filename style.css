@@ -127,7 +127,7 @@ body {
   font-weight: 700;
 }
 
-.pink, .fa-search:hover, .fa-bars:hover, .fa-user:hover, .fa-shopping-cart:hover, .menu__head, .menu__link:hover, .item__price {
+.pink, .fa-search:hover, .fa-bars:hover, .fa-user:hover, .fa-shopping-cart:hover, .menu__head, .menu__link:hover, .menu[open] .fa-bars, .item__price {
   color: #f16d7f;
 }
 
