@@ -2,7 +2,6 @@ $bd: 1px
 $pink: #f16d7f
 $e8: #E8E8E8
 $black: #222222
-
 *
     margin: 0
     padding: 0
@@ -44,21 +43,61 @@ body
 
 .logo
     display: block
-    flex-grow: 1
     @extend .header-icon
 
 .fa-search, .fa-bars, .fa-user, .fa-shopping-cart
     @extend .header-icon
-    flex-grow: 1
     cursor: pointer
+    position: relative
+    display: block
     &:hover
         @extend .pink
+
+.menu
+    &__box
+        padding: 3% 2%
+        background: #ffffff
+        font-size: 14px
+        line-height: 17px
+        display: none
+        position: absolute
+        top: 9%
+        left: 79%
+        right: 1%
+        bottom: 3%
+        z-index: 1
+    &__heading
+        color: #000000
+        margin-bottom: 1%
+        text-transform: uppercase
+    &__head
+        @extend .pink
+        margin-top: 10%
+        margin-bottom: 8%
+        text-transform: uppercase
+        font-weight: 400
+    &__list
+        list-style-type: none
+    &__link
+        color: #6F6E6E
+        text-decoration: none
+        display: block
+        padding-left: 5%
+        margin-top: 6%
+        &:hover
+            @extend .pink
+
+.menu[open] .menu__box
+    display: block
+
+.menu[open] .fa-bars
+    @extend .pink
 
 .banner-top
     background: #F1E4E6
     &__box
         @extend .container
-        background: url(img/banner.png) no-repeat
+        // background: url(img/banner.png) no-repeat
         min-height: 764px
         position: relative
     &__text
@@ -95,12 +134,15 @@ body
         align-items: center
         transition: 1s
         width: 31%
-        &_width
+        &__accesories
             width: 100%
+            background-image: url(img/accesories.png)
+            background-position: center
+            min-height: 181px
         &:hover
             transform: scale(1.2)
         &:hover .pics__img
-            filter: brightness(1.5)
+            // filter: brightness(1.5)
     &__img
         width: 100%
     &__text
@@ -134,6 +176,7 @@ body
 
 .ml
     margin-left: 6%
+    margin-right: 6%
 
 .item
     position: relative
@@ -356,10 +399,9 @@ body
 
     .feedback
         padding: 10%
-
-    .feedback__figure
-        width: 55%
-        flex-grow: 1
+        &__figure
+            width: 55%
+            flex-grow: 1
 
     .subscribe
         width: 60%
@@ -367,8 +409,56 @@ body
 
 @media (max-width: 667px)
 
+    .header-left
+        width: 25%
+
+    .header-right
+        width: 1%
+
     .fa-user, .fa-shopping-cart
         display: none
 
-    .banner-top__box
-        background-image: none
+    .menu[open] .menu__box
+        display: none
+
+    .banner-top
+        display: flex
+        justify-content: center
+        padding: 0 3%
+        &__box
+            min-height: fit-content
+            padding: 31% 0 34%
+        &__box img
+            display: none
+
+    .banner-top__text
+        position: unset
+        width: max-content
+
+    .the-brand
+        font-size: 44px
+
+    .luxerious
+        font-size: 23px
+
+    .pics__top, .item__box
+        flex-direction: column
+
+    .feedback__figure, .subscribe, .subscribe__input, .advantages__item
+        width: 90%
+
+    .item, .pics__link
+        width: 100%
+
+    .pics__link
+        margin-top: 10%
+
+    .browse
+        margin: 6% auto 16%
+
+    .footer__box
+        flex-direction: column-reverse
+
+    .social
+        width: 40%
+        padding: 8% 0 9%
